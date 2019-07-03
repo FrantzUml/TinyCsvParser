@@ -19,7 +19,9 @@ namespace TinyCsvParser.Ranges
         {
             Start = start;
             End = end;
-            Length = end - start + 1;
+            //Length = end - start + 1;
+            Length = end - start; // as if start is inclusive and end is exclusive, the length is end-start
+            // but don't know the impact on the code elsewhere !!
         }
 
         public Tuple<int, int> GetOffsetAndLength(int length)
